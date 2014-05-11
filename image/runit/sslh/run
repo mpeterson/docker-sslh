@@ -1,0 +1,9 @@
+#!/bin/bash
+LISTEN_ADDR=${LISTEN_ADDR:-0.0.0.0:443}
+
+HOST_ADDR=$(ifconfig docker0|grep 'inet addr'|awk '{ print $2 }'|cut -d: -f2)
+
+SSL_TARGET_ADDR=${SSL_TARGET_ADDR:-$HOST_ADDR:8443}
+SSH_TARGET_ADDR=${SSH_TARGET_ADDR:-$HOST_ADDR:22}
+
+/usr/sbin/sslh -p $LISTEN_ADDR --ssl $SSL_TARGET_ADDR --ssh $SSH_TARGET_ADDR -f
