@@ -6,7 +6,7 @@ Considering you have SSH listening on port 22 and HTTPS listening on port 443.
 $ sudo docker run -d --name sslh --net=host -p 443:443 -p 127.0.0.1::22 mpeterson/sslh
 ```
 
-*__Note:__ Notice that since the image is based on [phusion/baseimage-docker] it has a SSH service listening on 22 which in the example above is mapped so we can access the image in the case we wanted to.*
+*__Note:__ Notice that since the image is based on [phusion/baseimage-docker](https://github.com/phusion/baseimage-docker) it has a SSH service listening on 22 which in the example above is mapped so we can access the image in the case we wanted to.*
 
 ## Requirements
 As it uses the docker host networking feature it needs docker >= 0.11
