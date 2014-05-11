@@ -30,10 +30,10 @@ EXPOSE 22
 # End of particularities of this image
 
 # Give the possibility to override any file on the system
-RUN cp -R /build/overrides/. /
+RUN cp -R /build/overrides/. / || :
 
 # Add services
-RUN cp -R /build/runit/. /etc/service/
+RUN cp -R /build/runit/. /etc/service/ || :
 
 # Clean everything up
 RUN apt-get clean
