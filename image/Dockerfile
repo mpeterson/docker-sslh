@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.9
+FROM phusion/baseimage:0.9.10
 MAINTAINER mpeterson <docker@peterson.com.ar>
 
 # Make APT non-interactive
